@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayebare Ramadhan — Portfolio</title>
+<style>
+:root{
+  --bg:#f1eded;
+  --about:#fff;
+  --skills:#222;
+  --projects:#6774ee;
+  --contacts:#f4f8f7;
+  --accent:#0f0f0f;
+  --text:#f1ecec;
+  --radius:12px;
+  --maxw:1100px;
+}
+
+/* Base */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Segoe UI, Roboto, Arial,sans-serif;}
+body{background:var(--bg);color:var(--text);padding:20px;overflow-x:hidden;transition:0.3s all;}
+h1,h2,p{transition:all 0.3s ease;}
+
+/* Neon shimmer headings */
+h1,h2{
+  background: linear-gradient(270deg, #ff4d4d, #ffb74d, #4dd0ff, #81c784, #ba68c8, #f48fb1);
+  background-size: 1200% 1200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 10s ease infinite;
+}
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Dashboard */
+.dashboard{
+  display:flex;justify-content:center;gap:40px;
+  background:#0a0a0a;padding:15px 0;position:sticky;top:0;z-index:1000;
+}
+.dashboard a{
+  color:var(--text);text-decoration:none;font-weight:600;font-size:1rem;transition:0.3s;
+}
+.dashboard a.active,
+.dashboard a:hover{color:var(--accent);}
+
+/* Container */
+.container{width:100%;max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:40px;position:relative;}
+
+/* Welcome message */
+.welcome-msg{
+  font-size:1.8rem;font-weight:700;color:#ff4d4d;text-align:center;margin:15px 0;
+  opacity:0;
+  animation: bounceDown 2s ease-out forwards;
+}
+@keyframes bounceDown{
+  0%{transform:translateY(-100px);opacity:0;}
+  60%{transform:translateY(20px);opacity:1;}
+  80%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* Header */
+header{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;flex-direction:column;align-items:center;}
+header .header-info{display:flex;flex-direction:column;justify-content:center;}
+header p{margin:5px 0 0;color:var(--accent);font-weight:600;font-size:1.2rem;text-shadow:0 0 4px #fff;}
+
+/* Profile pics hover glow */
+.photo, .center-photo{
+  overflow:hidden;border:3px solid var(--accent);border-radius:50%;transition:0.4s all;cursor:pointer;
+}
+.photo{width:130px;height:130px;}
+.center-photo{width:300px;height:300px;margin:30px auto;border-radius:20px;}
+.photo img,.center-photo img{width:100%;height:100%;object-fit:cover;border-radius:inherit;transition:0.5s transform ease,box-shadow 0.5s ease;}
+.photo:hover img{transform:scale(1.1);box-shadow:0 0 30px #ff4d4d,0 0 60px #ff9999;}
+.center-photo:hover img{transform:scale(1.05);box-shadow:0 0 30px #9bec17,0 0 60px #b7ff5c;}
+
+/* Sections fade-in + scale + slide animations */
+section{
+  padding:30px;border-radius:var(--radius);display:flex;flex-direction:column;
+  align-items:center;text-align:center;margin-bottom:40px;
+  opacity:0;transform:translateY(50px) scale(0.95);transition:all 0.8s ease;
+  background:#111;box-shadow:0 0 20px rgba(255,255,255,0.05);
+}
+.slide-in-right{transform:translateX(100px);opacity:0;transition:all 1s ease;}
+
+/* About */
+.about{background:var(--about);color:#222;}
+.about p{line-height:1.8;font-size:1.15rem;max-width:700px;margin-bottom:15px;}
+
+/* Skills */
+.skills{background:var(--skills);width:100%;padding:20px;border-radius:var(--radius);}
+.skills-chart{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:20px;
+  flex-wrap:wrap;
+  padding:20px;
+  background:#111;
+  border-radius:var(--radius);
+}
+.skill-bar{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:60px;
+  margin:10px;
+  transition:all 0.5s ease;
+}
+.skill-bar .bar{
+  width:100%;
+  border-radius:8px 8px 0 0;
+  margin-bottom:5px;
+  height:0;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  position:relative;
+  transition: all 1s ease, box-shadow 0.3s ease;
+}
+.skill-bar .bar span{
+  position:absolute;
+  top:-22px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:0.9rem;
+  font-weight:700;
+  color:#fff;
+  text-shadow:0 0 2px #fff,0 0 4px #fff;
+}
+.skill-bar span:last-child{
+  margin-top:5px;
+  text-align:center;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#fff;
+  word-break:break-word;
+}
+.skill-bar .bar:hover{animation: neonPulse 1.5s infinite alternate;}
+@keyframes neonPulse{
+  0%{box-shadow:0 0 10px #fff,0 0 20px rgba(255,255,255,0.3);}
+  50%{box-shadow:0 0 20px #fff,0 0 40px rgba(255,255,255,0.6);}
+  100%{box-shadow:0 0 30px #fff,0 0 60px rgba(255,255,255,0.9);}
+}
+
+/* Projects */
+.projects{background:var(--projects); width:100%; padding:20px;border-radius:var(--radius);}
+.project-card{
+  background:var(--bg);padding:20px;border-radius:12px;margin-bottom:20px;transition:transform 0.3s ease,box-shadow 0.3s ease;
+  text-align:left;width:100%;color:#000;
+}
+.project-card h3,.project-card p{color:#000;opacity:0;transform:translateX(100px);transition:all 1s ease;}
+.project-card.visible h3,.project-card.visible p{opacity:1;transform:translateX(0);}
+
+/* Contacts */
+.contacts{background:var(--contacts);width:100%;padding:30px;border-radius:var(--radius);}
+.contacts a{color:#080a0a;text-decoration:none;font-weight:600;display:block;margin:8px 0;font-size:1.1rem;transition:0.3s;}
+.contacts a:hover{color:#fff;text-shadow:0 0 10px #1abc9c;}
+
+/* Responsive */
+@media(max-width:900px){
+  header{flex-direction:column;align-items:center;}
+  .center-photo{width:220px;height:220px;}
+  .skill-bar{width:50px;}
+  .skill-bar span:last-child{font-size:0.8rem;}
+}
+@media(max-width:500px){
+  .skill-bar{width:40px;margin:8px;}
+  .skill-bar span:last-child{font-size:0.75rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contacts">Contact</a>
+</div>
+
+<div class="container">
+  <header>
+    <div class="photo"><img src="rama.jpeg" alt="Ayebare Ramadhan"></div>
+    <div class="welcome-msg" id="welcome">Welcome to RamadhanPortfolio!</div>
+    <div class="header-info">
+      <h1>Ayebare Ramadhan Salim</h1>
+      <p>Full-Stack Developer | Designer | Tech Innovator</p>
+    </div>
+  </header>
+
+  <div class="center-photo"><img src="rama.jpeg" alt="Centered"></div>
+
+  <section id="about" class="about slide-in-right">
+    <h2>About Me</h2>
+    <p>From the trenches of Ntungamo district to vibrant streets where technology meets creativity, my journey has been about chasing innovation and mastering tools across design and development. I build practical, beautiful experiences using HTML, CSS, JavaScript, Java (NetBeans), and design tools like Figma, Photoshop, and Illustrator.</p>
+    <p>I value integrity, perseverance, and collaboration — principles shaped by my faith and community. This portfolio shares my work, learning, and passion for creating meaningful digital experiences.</p>
+  </section>
+
+  <section id="skills" class="skills slide-in-right">
+    <h2>Skills & Ratings</h2>
+    <div class="skills-chart">
+      <div class="skill-bar"><div class="bar" data-height="170px" style="background:linear-gradient(180deg,#ff4d4d,#ff9999);"><span>85%</span></div><span>Figma</span></div>
+      <div class="skill-bar"><div class="bar" data-height="160px" style="background:linear-gradient(180deg,#ff8a4d,#ffc48a);"><span>80%</span></div><span>Photoshop</span></div>
+      <div class="skill-bar"><div class="bar" data-height="150px" style="background:linear-gradient(180deg,#ffd54d,#fff18a);"><span>75%</span></div><span>Illustrator</span></div>
+      <div class="skill-bar"><div class="bar" data-height="140px" style="background:linear-gradient(180deg,#4dd0ff,#a0e5ff);"><span>70%</span></div><span>Canva</span></div>
+      <div class="skill-bar"><div class="bar" data-height="130px" style="background:linear-gradient(180deg,#81c784,#b3e6b3);"><span>65%</span></div><span>Filmora</span></div>
+      <div class="skill-bar"><div class="bar" data-height="140px" style="background:linear-gradient(180deg,#ba68c8,#d6a9e0);"><span>70%</span></div><span>Premier Pro</span></div>
+      <div class="skill-bar"><div class="bar" data-height="160px" style="background:linear-gradient(180deg,#90caf9,#c0deff);"><span>80%</span></div><span>HTML</span></div>
+      <div class="skill-bar"><div class="bar" data-height="150px" style="background:linear-gradient(180deg,#f48fb1,#f8c0d0);"><span>75%</span></div><span>CSS</span></div>
+      <div class="skill-bar"><div class="bar" data-height="140px" style="background:linear-gradient(180deg,#4db6ac,#8de3dc);"><span>70%</span></div><span>Java</span></div>
+      <div class="skill-bar"><div class="bar" data-height="150px" style="background:linear-gradient(180deg,#ffb74d,#ffe1a3);"><span>75%</span></div><span>JavaScript</span></div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects slide-in-right">
+    <h2>Projects</h2>
+    <div class="project-card"><h3>Student Enrollment System</h3><p>Tracking and managing student records efficiently.</p></div>
+    <div class="project-card"><h3>Crypto Agency</h3><p>Dynamic crypto-focused web platform.</p></div>
+  </section>
+
+  <section id="contacts" class="contacts slide-in-right">
+    <h2>Contact Me</h2>
+    <a href="https://wa.me/256773296923" target="_blank" rel="noopener noreferrer">WhatsApp: +256 773 296 923</a>
+    <a href="https://wa.me/256740655761" target="_blank" rel="noopener noreferrer">WhatsApp: +256 740 655 761</a>
+    <a href="mailto:ayebareramadhan998@gmail.com">Email: ayebareramadhan998@gmail.com</a>
+    <a href="mailto:ayebareramadhansalim@gmail.com">Alternate Email: ayebareramadhansalim@gmail.com</a>
+  </section>
+</div>
+
+<script>
+// Show welcome message
+window.addEventListener('load',()=>{document.getElementById('welcome').style.opacity='1';});
+
+// Smooth scroll
+document.querySelectorAll('.dashboard a').forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Animate sections + skill bars + projects
+const sections = document.querySelectorAll('section');
+const skillBars = document.querySelectorAll('.skill-bar .bar');
+const projects = document.querySelectorAll('.project-card');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity='1';
+      entry.target.style.transform='translateY(0) scale(1)';
+      entry.target.classList.remove('slide-in-right');
+
+      if(entry.target.id==='skills'){
+        skillBars.forEach(bar=>{
+          bar.style.height=bar.getAttribute('data-height');
+        });
+      }
+
+      if(entry.target.classList.contains('projects')){
+        projects.forEach(p=>p.classList.add('visible'));
+      }
+    }
+  });
+},{threshold:0.3});
+sections.forEach(sec=>observer.observe(sec));
+</script>
+</body>
+</html>
