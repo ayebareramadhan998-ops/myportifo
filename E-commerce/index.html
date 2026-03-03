@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaguar Collections</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="logo">JAGUAR COLLECTIONS</div>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- ================= SWIPER SLIDER ================= -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="slide-img"><img src="sleavless tshirt.jpg.png" alt="Sleeveless Jacket"></div>
+          <div class="slide-content">
+            <h2>Sleeveless Jacket</h2>
+            <p>Affordable, original, and available in different types.</p>
+            <div class="price">Shillings 90,000</div>
+            <button class="explore-btn">Explore Product</button>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="slide-img"><img src="sleavless tshirt.jpg.png" alt="Sleeveless T-shirt"></div>
+          <div class="slide-content">
+            <h2>Sleeveless T-shirt</h2>
+            <p>Available in all sizes, made of retro style, affordable price.</p>
+            <div class="price">Shillings 150,000</div>
+            <button class="explore-btn">Explore Product</button>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="slide-img"><img src="jordan9.jpg.png" alt="Jordan 9"></div>
+          <div class="slide-content">
+            <h2>Jordan 9</h2>
+            <p>Retro-style shoes in all sizes at affordable price.</p>
+            <div class="price">Shillings 150,000</div>
+            <button class="explore-btn">Explore Product</button>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="slide-img"><img src="T-shirt.jpg.png" alt="T-shirt"></div>
+          <div class="slide-content">
+            <h2>T-shirt</h2>
+            <p>Various styles and sizes available at affordable price.</p>
+            <div class="price">Shillings 150,000</div>
+            <button class="explore-btn">Explore Product</button>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <div class="slide-img"><img src="jordan4.jpg.png" alt="Jordan 4"></div>
+          <div class="slide-content">
+            <h2>Jordan 4</h2>
+            <p>Retro shoes in all sizes at affordable price.</p>
+            <div class="price">Shillings 150,000</div>
+            <button class="explore-btn">Explore Product</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swiper Controls -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- ================= PRODUCTS TABLE ================= -->
+    <section id="products" class="products-section">
+      <h2>Our Products</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Product Name</th>
+            <th>Model</th>
+            <th>Price (UGX)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Jordan</td>
+            <td>Retro</td>
+            <td>150,000</td>
+            <td>Available</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>T-shirt</td>
+            <td>Leather</td>
+            <td>150,000</td>
+            <td>Available</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ================= CONTACT FORM ================= -->
+   <section class="contact-us">
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <input type="text" name="user_name" placeholder="Your Name" required>
+    <input type="email" name="user_email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+    <p id="form-message"></p>
+  </form>
+</section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+ <footer>
+  <div class="footer-container">
+    <p>&copy; 2026 Jaguar Collections</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/ayebare.ramadhan.salim" target="_blank" class="fb">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/iam_ramadhansalim" target="_blank" class="ig">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://twitter.com/RamadhanAy38914" target="_blank" class="tw">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter">
+      </a>
+      <a href="https://wa.me/256740655761" target="_blank" class="wa">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp 1">
+      </a>
+      <a href="https://wa.me/256773296923" target="_blank" class="wa">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp 2">
+      </a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
